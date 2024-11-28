@@ -2,7 +2,8 @@
 import socket
 
 # Server configuration
-HOST = '172.23.189.121'  # Replace with your server's IP address
+HOST = '172.30.175.89'  # Replace this with your server's IP address. 
+# Depends on what you are using, you have to replace the IP's address according to the terminal that you are using to run it
 PORT = 8386  # Port for communication
 
 def start_server():
@@ -31,7 +32,7 @@ def start_server():
         with open(filename, 'wb') as file:
             while True:
                 data = conn.recv(1024)  # Receive file data in chunks (1KB)
-                if not data:  # No more data means the file transfer is complete
+                if not data:  # Condition to check if the file transfer is complete
                     break
                 file.write(data)
 

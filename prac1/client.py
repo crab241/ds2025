@@ -3,7 +3,7 @@ import socket
 import os
 
 # Server configuration
-SERVER_IP = input("Enter the server's IP address: ")  # Server's IP address
+SERVER_IP = input("Enter the server's IP address: ")  # Enter Server's IP address that we have declared in the server.py
 PORT = 8386  # Server's port
 
 def send_file():
