@@ -132,18 +132,18 @@ The system consists of two main components: the client and the server. Their rol
 \subsection{Architecture Diagram}
 \begin{figure}[h]
     \centering
-    \begin{tikzpicture}[node distance=2cm]
+    \begin{tikzpicture}[node distance=2cm, >=stealth, thick]
 
     % Nodes
-    \node (server) [ellipse] {Server};
-    \node (network) [ellipse, right of=client, xshift=4cm] {Network};
-    \node (client) [ellipse, right of=network, xshift=4cm] {Client};
+    \node (server) [ellipse, draw, fill=blue!20, minimum width=2.5cm, minimum height=1.5cm, align=center] {Server};
+    \node (network) [ellipse, draw, fill=blue!20, minimum width=2.5cm, minimum height=1.5cm, align=center, right of=server, xshift=4cm] {Network};
+    \node (client) [ellipse, draw, fill=blue!20, minimum width=2.5cm, minimum height=1.5cm, align=center, right of=network, xshift=4cm] {Client};
 
     % Arrows
-    \draw [arrow] (server.east) -- node[anchor=south] {Open Connection} (network.west);
-    \draw [arrow] (network.east) -- node[anchor=south] {Forward to Client} (server.west);
-    \draw [arrow] (server.west) -- node[anchor=north] {Send Data} (network.east);
-    \draw [arrow] (network.west) -- node[anchor=north] {Received data from Client} (client.east);
+    \draw [->] (server.east) -- node[midway, above] {Open Connection} (network.west);
+    \draw [->] (network.east) -- node[midway, above] {Forward to Client} (client.west);
+    \draw [->] (client.west) to node[midway, below] {Send Data} (network.east);
+    \draw [->] (network.west) to node[midway, below] {Received Data} (server.east);
 
     \end{tikzpicture}
     \caption{System Architecture for TCP File Transfer}
