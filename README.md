@@ -11,4 +11,4 @@ Student Info
 
 * Student Name: Vũ Trọng Bách
 * Student ID: 22BI13056
-* Student Group ID: 13
+* Student Group ID: 11
